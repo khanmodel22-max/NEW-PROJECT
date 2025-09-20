@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUSTAFA MOBILES</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      position: relative;
+    }
+    .navbar { background-color: #222 !important; }
+    .navbar-brand img { height: 40px; margin-right: 8px; }
+
+    /* Stickers beside heading */
+    .welcome-container {
+      position: relative;
+      display: inline-block;
+      padding: 0 80px;
+    }
+    .welcome-sticker {
+      position: absolute;
+      width: 150px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.95;
+    }
+    .sticker-left { left: -150px; }
+    .sticker-right { right: -150px; }
+
+    /* Infinite Scroll Navbar Carousel (Seamless) */
+    .scroll-container {
+      overflow: hidden;
+      background: #111;
+      padding: 10px 0;
+    }
+    .scroll-content {
+      display: flex;
+      animation: scroll-left 25s linear infinite;
+    }
+    .scroll-content img {
+      height: 60px;
+      margin: 0 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Service Cards */
+    .card img { height: 250px; object-fit: cover; border-radius: 15px 15px 0 0; }
+    .card { border: none; border-radius: 15px; overflow: hidden; background: #fff; color: #222; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: 0.4s ease; }
+    .card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 0 25px #ffd700; }
+    .card-body { background: linear-gradient(135deg,#fdfdfd,#f9f9f9); padding: 20px; text-align: center; }
+
+    /* Contact Cards */
+    .contact-card { background: #111; padding: 25px; border-radius: 12px; color: white; box-shadow: 0px 4px 15px rgba(0,0,0,0.5); }
+    .social-icons a { font-size: 30px; margin: 10px; color: white; transition: 0.3s; }
+    .social-icons a:hover { color: #ffd700; transform: scale(1.2); }
+
+    footer { background: #111; padding: 20px; text-align: center; margin-top: 30px; }
+
+    /* Carousel */
+    .carousel-inner { border-radius: 15px; overflow: hidden; background: #000; }
+    .carousel-item { display: flex; justify-content: center; align-items: center; background: #000; }
+    .carousel-item img { width: 100%; height: auto; max-height: 450px; object-fit: contain; }
+
+    /* Carousel Thumbnails */
+    .carousel-indicators { display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+    .carousel-indicators button { border: none; padding: 0; background: none; }
+    .carousel-indicators img { width: 80px; height: 60px; object-fit: cover; border-radius: 10px; opacity: 0.7; border: 2px solid #fff; transition: 0.3s; }
+    .carousel-indicators .active img { border: 3px solid #ffd700; opacity: 1; transform: scale(1.05); }
+
+    /* Accessories Info */
+    .accessories-info { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 30px; margin-top: 20px; text-align: center; }
+    .accessories-info h3 { color: #ffd700; margin-bottom: 20px; }
+    .accessories-info p { font-size: 1.1rem; line-height: 1.6; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .welcome-sticker { width: 100px; left: -100px; right: -100px; }
+      .carousel-item img { max-height: 300px; }
+      .scroll-content img { height: 50px; margin: 0 15px; animation-duration: 40s; }
+    }
+    @media (max-width: 480px) {
+      .welcome-sticker { width: 80px; left: -80px; right: -80px; }
+      .carousel-item img { max-height: 200px; }
+      .scroll-content img { height: 40px; margin: 0 10px; animation-duration: 60s; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+        <img src="Images/custom-logo-and-brand-identity.jpg" alt="Mustafa Mobiles Logo"> 
+        MUSTAFA MOBILES
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Infinite Scrolling Accessory Images (Seamless) -->
+  <div class="scroll-container">
+    <div class="scroll-content">
+      <img src="Images/logo.jpg" alt="">
+      <img src="Images/product 1.png" alt="">
+      <img src="Images/product 2.webp" alt="">
+      <img src="Images/product 3.webp" alt="">
+      <img src="Images/mobile 4.jpg" alt="">
+      <img src="Images/mobile 3.jpg" alt="">
+      <img src="Images/custom-logo-and-brand-identity.jpg" alt="">
+      <!-- Duplicate for seamless scroll -->
+      <img src="Images/logo.jpg" alt="">
+      <img src="Images/product 1.png" alt="">
+      <img src="Images/product 2.webp" alt="">
+      <img src="Images/product 3.webp" alt="">
+      <img src="Images/mobile 4.jpg" alt="">
+      <img src="Images/mobile 3.jpg" alt="">
+      <img src="Images/custom-logo-and-brand-identity.jpg" alt="">
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="text-center py-5">
+    <div class="welcome-container">
+      <img src="Images/stickers 1.webp" class="welcome-sticker sticker-left" alt="Sticker">
+      <h1 class="fw-bold display-4">Welcome to Mustafa Mobiles</h1>
+      <img src="Images/sticker 2.avif" class="welcome-sticker sticker-right" alt="Sticker">
+    </div>
+    <p class="lead mt-3">Expert Mobile Repair Services | Quick | Reliable | Affordable</p>
+    <a href="#services" class="btn btn-warning btn-lg mt-3">Explore Our Services</a>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="container py-5">
+    <h2 class="text-center mb-4">Our Services</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow">
+          <img src="Images/mobile 2.jpg" class="card-img-top" alt="Screen Repair">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Screen Repair</h5>
+            <p class="card-text">Get your cracked or broken screens replaced with high-quality parts quickly and affordably.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow">
+          <img src="Images/mobile 3.jpg" class="card-img-top" alt="Hardware Repair">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Hardware Repair</h5>
+            <p class="card-text">We fix all hardware issues including charging ports, speakers, and motherboard problems.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow">
+          <img src="Images/mobile 4.jpg" class="card-img-top" alt="Expert Technicians">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Expert Technicians</h5>
+            <p class="card-text">Our trained technicians ensure quality repairs with professional tools and methods.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Carousel -->
+  <section class="container py-5">
+    <h2 class="text-center mb-4">Our Featured Products</h2>
+    <div id="featuredCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner rounded shadow">
+        <div class="carousel-item active"><img src="Images/product 1.png" alt="Product 1"></div>
+        <div class="carousel-item"><img src="Images/product 2.webp" alt="Product 2"></div>
+        <div class="carousel-item"><img src="Images/product 3.webp" alt="Product 3"></div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+      <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+
+      <div class="carousel-indicators mt-3">
+        <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="0" class="active"><img src="Images/product 1.png" alt="Thumbnail 1"></button>
+        <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="1"><img src="Images/product 2.webp" alt="Thumbnail 2"></button>
+        <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="2"><img src="Images/product 3.webp" alt="Thumbnail 3"></button>
+      </div>
+    </div>
+
+    <div class="accessories-info mt-4">
+      <h3>Mobile Phone Accessories</h3>
+      <p>We offer a wide range of high-quality mobile accessories including protective cases, tempered glass screen protectors, charging cables, wireless chargers, earphones, and power banks. All our accessories are durable, stylish, and designed to enhance your mobile experience.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container py-5">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <img src="Images/contact us logo.png" alt="Contact Us Logo" class="contact-logo mb-3 d-block mx-auto">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="contact-card">
+          <form>
+            <div class="mb-3"><label for="name" class="form-label">Name</label><input type="text" class="form-control" id="name" placeholder="Your Name"></div>
+            <div class="mb-3"><label for="email" class="form-label">Email</label><input type="email" class="form-control" id="email" placeholder="Your Email"></div>
+            <div class="mb-3"><label for="message" class="form-label">Message</label><textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea></div>
+            <button type="submit" class="btn btn-warning w-100">Send Message</button>
+          </form>
+          <div class="mt-4">
+            <p><i class="fas fa-phone"></i> <a href="tel:9885638367" class="text-white">9885638367</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:khanmodel22@gmail.com" class="text-white">khanmodel22@gmail.com</a></p>
+            <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/9885638367" target="_blank" class="text-white">Chat on WhatsApp</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6"><img src="Images/mobile repairing.jpg" class="img-fluid rounded" alt="Contact Us"></div>
+    </div>
+
+    <div class="text-center mt-5">
+      <h3>Follow Us On</h3>
+      <div class="social-icons">
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/9885638367" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://snapchat.com" target="_blank"><i class="fab fa-snapchat"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="py-5 bg-dark">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6"><img src="Images/logo.jpg" class="img-fluid rounded" alt="About Mustafa Mobiles"></div>
+        <div class="col-md-6">
+          <h2>About Us</h2>
+          <p>Mustafa Mobiles has been serving customers with top-notch mobile repair services for years. From screen replacements to motherboard repairs, we provide reliable and affordable solutions with a focus on customer satisfaction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mustafa Mobiles. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
